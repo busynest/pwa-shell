@@ -1,0 +1,12 @@
+{
+  "name": "pwa-shell",
+  "short_name": "pwa-shell",
+  "description": "an Application Shell built with Lit-HTML, Redux, Firebase, and Polymer.",
+  "start_url": "/",
+  "homepage": "https://www.contractorscentre.com",
+  "manifest_version": 1,
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#303030",
+  "background_color": "#303030"
+}

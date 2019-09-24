@@ -1,0 +1,17 @@
+{
+  "name": "pwa-shell",
+  "author": "Modern Projects <jack.solutionbox@gmail.com>(https://www.contractorscentre.com)",
+  "version": "0.0.1",
+  "description": "Application Shell for Progressive Website Application.",
+  "homepage": "https://www.inmostfire.com",
+  "main": "application-shell.js",
+  "license": "BSD-3-Clause",
+  "flat": true,
+  "dependencies": {
+    "@polymer/app-layout": "^3.1.0",
+    "i": "^0.3.6",
+    "npm": "^6.11.3",
+    "pwa-auth": "^0.0.15",
+    "submit-content": "^0.0.2"
+  }
+}

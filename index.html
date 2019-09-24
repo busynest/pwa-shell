@@ -1,0 +1,123 @@
+<!--
+@license
+Copyright (c) 2018 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- PRECONNECT -->
+    <link rel="preconnect" href="https://www.google.com/" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.gstatic.com">
+    <link rel="preconnect" href="https://stats.g.doubleclick.net" crossorigin>
+    <!-- FORCE ALL POLYFILLS OM -->
+    <script>
+      if (window.customElements) window.customElements.forcePolyfill = true;
+      ShadyDOM = { force: true };
+      ShadyCSS = { shimcssproperties: true};
+    </script>
+    <!-- LOAD ALL POLYFILLS YOUR BROWSER NEEDS -->
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js" async ></script>  
+    <!-- TITILE -->
+    <title>pwa-auth</title>
+    <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1" />
+    <!-- BASE -->
+    <base href="/">
+
+
+    <!-- STYLES -->
+    <style>
+      body    { margin: 0; background-color: #303030; }
+      header  { height: 64px; display: grid; grid-template-columns: 1fr 64px ; background-color: #303030; }
+      main    { margin: 0 16px 0 16px; background-color: #fff; border-radius: 8px; padding: 8px;}
+      footer  { background-color: #303030; height: 100%; color: #e8e8e8; }
+      .links  { margin: auto; text-decoration: none; font-size: 1em; color: red; font-weight: 800; }
+      .link   { margin: auto; text-decoration: none; font-size: 1em; color: #e8e8e8; font-weight: 800; }
+      p       { margin: 16px; background-color: #fff; color: black; border-radius: 8px; padding: 16px; font-size: 1em; }
+      h1, h2  { text-align: center; }
+      h3      { text-align: center; color: #e8e8e8; padding-left: 64px; text-transform: uppercase; font-size: 1em; }
+    </style>
+    <!-- https://github.com/reactjs/redux/issues/2907 -->
+    <script>
+      /*
+    if ('serviceWorker' in navigator) { window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js', {
+          scope: '/',
+        });
+      });
+    }
+    */
+    window.process = { env: { NODE_ENV: 'production' } };
+    </script>
+    <!-- MANIFEST -->
+    <link rel="manifest"       href="manifest.json" />
+    <!-- FAVICON -->
+    <link rel="icon"           href="images/favicon.ico">
+    <!-- THEME COLOR -->
+    <meta name="theme-color"   content="#272931" />
+    <!-- AUTHOR -->
+    <meta name="author"        content="Modern Projects" />
+    <!-- CANONICAL -->
+    <link rel="canonical"      href="https://contractorscentre.com" />
+    <!-- DESCRIPTION -->
+    <meta name="description"   content="an Application Shell built with Lit-HTML, Redux, Firebase, and Polymer." />
+    <!-- KEYWORDS -->
+    <meta name="keywords"     content="lit-html, redux, firebase" />
+  
+  </head>
+
+  <body>
+
+    <!-- APPLICATION-SHELL -->
+    <application-shell appTitle="pwa-auth"></application-shell>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-73943527-19"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-73943527-19');
+    </script>
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"            ></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"           ></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"      ></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-storage.js"        ></script> 
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {  });  
+        // Initialize Firebase
+        const admin = {
+          apiKey: "AIzaSyAJfm5MahdHr4HzwRLWN7IBhVYXMjP65lQ",
+          authDomain: "inmostfire.firebaseapp.com",
+          databaseURL: "https://inmostfire.firebaseio.com",
+          projectId: "inmostfire",
+          storageBucket: "inmostfire.appspot.com",
+          messagingSenderId: "937289126032"
+        };
+
+        // REFERENCE TO SERVICES
+        const application           = firebase.initializeApp(admin);
+        const firestore             = application.firestore();
+        const storage               = firebase.storage();
+        const storageRef            = storage.ref();
+
+    </script>
+
+    <!-- APPLICATION-SHELL -->
+    <script type="module" src="/launch/application-shell.js" async></script>
+    
+  </body>
+</html>

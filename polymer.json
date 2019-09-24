@@ -1,0 +1,24 @@
+{
+  "entrypoint": "index.html",
+  "shell": "pwa-shell.js",
+  "moduleResolution": "node",
+  "npm": true,
+  "license": "MIT",
+  "extraDependencies": [
+    "manifest.json",
+    "robots.txt",
+    "node_modules/@webcomponents/webcomponentsjs/**",
+    "node_modules/@webcomponents/webcomponentsjs/bundles/**"
+  ],
+  "builds":
+  [
+      {
+      "name":                 "es5-bundled",
+      "js":                   { "minify": true, "compile": "es5", "transformModulesToAmd": true },
+      "css":                  { "minify": true },
+      "html":                 { "minify": true },
+      "bundle":               true,
+      "addServiceWorker":     true
+      }
+  ]
+}
